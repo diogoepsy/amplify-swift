@@ -56,7 +56,7 @@ extension AuthRule {
         guard let identityClaim = self.identityClaim else {
             return "username"
         }
-        if identityClaim == "cognito:username" {
+        if identityClaim == "cognito:username" && provider == .userPools {
             return "username"
         }
         return identityClaim
